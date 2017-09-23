@@ -10,7 +10,7 @@ class expressProblemJsonResponse {
      */
     express.response.httpProblemJSON = function (problemDocument) {
       this.set('Content-Type', 'application/problem+json');
-      this.status(400);
+      this.status(problemDocument.status);
       this.send(problemDocument);
     };
   }
